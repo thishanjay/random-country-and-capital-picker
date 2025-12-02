@@ -26,7 +26,10 @@ export default function Home() {
         {/* Country */}
         <div className="flex-1 flex flex-col items-center md:items-start">
           <p className="text-2xl font-semibold">Country: </p>
-          <p className="text-3xl md:text-4xl font-bold">{data?.country || "---"}</p>
+          <p className="text-3xl md:text-4xl font-bold">
+            {data?.country || "---"}
+          </p>
+
           {data?.country && (
             <button
               onClick={() =>
@@ -37,9 +40,25 @@ export default function Home() {
                   "_blank"
                 )
               }
-              className="text-blue-600 underline hover:cursor-pointer"
+              className="text-blue-600 underline hover:cursor-pointer m-4"
             >
               Wikipedia
+            </button>
+          )}
+
+          {data?.country && (
+            <button
+              onClick={() =>
+                window.open(
+                  `https://www.google.com/search?q=${encodeURIComponent(
+                    data.country
+                  )}`,
+                  "_blank"
+                )
+              }
+              className="text-blue-600 underline hover:cursor-pointer mx-4"
+            >
+              Google
             </button>
           )}
         </div>
@@ -47,7 +66,9 @@ export default function Home() {
         {/* Capital */}
         <div className="flex-1 flex flex-col items-center md:items-start">
           <p className="text-2xl font-semibold">Capital: </p>
-          <p className="text-3xl md:text-4xl font-bold">{data?.capital || "---"}</p>
+          <p className="text-3xl md:text-4xl font-bold">
+            {data?.capital || "---"}
+          </p>
 
           {data?.capital && (
             <button
@@ -59,9 +80,25 @@ export default function Home() {
                   "_blank"
                 )
               }
-              className="text-blue-600 underline hover:cursor-pointer"
+              className="text-blue-600 underline hover:cursor-pointer m-4"
             >
               Wikipedia
+            </button>
+          )}
+
+          {data?.capital && (
+            <button
+              onClick={() =>
+                window.open(
+                  `https://www.google.com/search?q=${encodeURIComponent(
+                    data.capital
+                  )}`,
+                  "_blank"
+                )
+              }
+              className="text-blue-600 underline hover:cursor-pointer mx-4"
+            >
+              Google
             </button>
           )}
         </div>
