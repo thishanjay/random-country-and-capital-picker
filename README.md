@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🇺🇳 Random Country & Capital Picker
 
-## Getting Started
+A simple and interactive Next.js app that displays a random country and its capital, with quick links to Wikipedia and Google for further research.
 
-First, run the development server:
+Built using Next.js, TypeScript, and Tailwind CSS.
 
-```bash
+🚀 Features
+
+🎲 Generates a random country + capital
+
+🌍 Contains a dataset of all 195 countries
+
+🔗 One-click access to:
+
+Wikipedia (Country & Capital)
+
+Google Search (Country & Capital)
+
+🖼️ Responsive and clean UI using Tailwind CSS
+
+⚡ Fast API route (/api/random) to fetch a random country
+
+🛠️ Tech Stack
+
+Next.js 14+
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+📂 Project Structure
+/app
+  ├── page.tsx              # UI for the home page
+  ├── api/random/route.ts   # API route returning random country data
+  └── data/countries.ts     # List of all countries + capitals
+
+▶️ Running the project locally
+1. Install dependencies
+npm install
+
+2. Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Now visit:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+📡 API Endpoint
+GET /api/random
 
-To learn more about Next.js, take a look at the following resources:
+Returns:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+{
+  "country": "Spain",
+  "capital": "Madrid"
+}
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧠 How it Works
 
-## Deploy on Vercel
+The countries.ts file stores an array of all countries + their capitals.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The API randomly selects one using:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+const random = countries[Math.floor(Math.random() * countries.length)];
+
+
+The UI calls the API when the user clicks Generate Random Country
+
+Wikipedia & Google buttons use:
+
+https://en.wikipedia.org/wiki/COUNTRY
+https://www.google.com/search?q=COUNTRY
+
+
+Automatically encoded for names with spaces or punctuation.
+
+🎨 UI Preview
+
+✔ Balanced layout
+✔ Clean typography
+✔ Mobile responsive
+✔ Buttons for quick research
+
+🙌 Contributions
+
+Feel free to submit issues or pull requests if you want to improve:
+
+UI/UX
+
+Extra data (flags, population, region, etc.)
+
+Animations
+
+More search sources
+
+📄 License
+
+MIT License — free to use, modify, and share.
