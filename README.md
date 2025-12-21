@@ -1,4 +1,4 @@
-🇺🇳 Random Country & Capital Picker
+# 🇺🇳 Random Country & Capital Picker
 
 A simple and interactive Next.js app that displays a random country and its capital, with quick links to Wikipedia and Google for further research.
 
